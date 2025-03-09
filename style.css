@@ -1,0 +1,79 @@
+:root {
+    --color-primary: #0E173D; 
+    --color-accent: #F15152;
+    --color-bg: #FFFFFF;
+    --color-dark: #2B2B2B;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg);
+    color: var(--color-dark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--color-primary);
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: -1px;
+}
+
+.logo img {
+    max-width: 200px; /* Ajusta el tamaño según lo necesites */
+    height: auto;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+footer {
+    background-color: #eee;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+/* Botón opcional */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--color-accent);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #d84546;
+}
