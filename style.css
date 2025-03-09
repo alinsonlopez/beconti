@@ -17,6 +17,9 @@ body {
 }
 
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: var(--color-primary);
     padding: 20px;
     text-align: center;
@@ -29,8 +32,12 @@ header {
     letter-spacing: -1px;
 }
 
+img {
+    max-width: 350px;
+}
+
 .logo img {
-    max-width: 200px; /* Ajusta el tamaño según lo necesites */
+    max-width: 200px; 
     height: auto;
 }
 
@@ -54,6 +61,9 @@ p {
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background-color: #eee;
     text-align: center;
     padding: 10px;
