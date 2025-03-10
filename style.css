@@ -1,89 +1,162 @@
 :root {
-    --color-primary: #0E173D; 
+    --color-primary: #0E173D;
     --color-accent: #F15152;
     --color-bg: #FFFFFF;
     --color-dark: #2B2B2B;
 }
 
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
     background-color: var(--color-bg);
     color: var(--color-dark);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-}
-
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: var(--color-primary);
-    padding: 20px;
     text-align: center;
 }
 
-.logo {
-    font-size: 36px;
-    font-weight: bold;
-    color: #fff;
-    letter-spacing: -1px;
+header, footer {
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    z-index: 1000;
+    flex-shrink: 0; /* Evita que header y footer se compriman */
 }
 
-img {
-    max-width: 350px;
+header {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .logo img {
-    max-width: 200px; 
+    max-width: 250px;
     height: auto;
 }
 
 main {
-    flex: 1;
+    flex: 1 0 auto; /* Permite que crezca pero no se encoja */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     padding: 20px;
+    width: 100%;
+    min-height: 500px; /* Asegura una altura mínima */
+    overflow-y: auto; /* Permite scroll vertical si es necesario */
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-container {
+    margin-bottom: 20px;
+    max-height: 40vh; /* Limita altura en viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.2rem;
     color: var(--color-primary);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 p {
-    font-size: 1.1em;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 20px; /* Añadido margen inferior */
+    padding: 0 15px;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #eee;
-    text-align: center;
-    padding: 10px;
-    font-size: 0.9em;
-}
-
-/* Botón opcional */
 .btn {
     display: inline-block;
     margin-top: 20px;
+    margin-bottom: 20px; /* Asegura espacio debajo del botón */
     padding: 10px 20px;
     background-color: var(--color-accent);
     color: #fff;
-    border: none;
     border-radius: 4px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    transition: 0.3s;
 }
 
 .btn:hover {
     background-color: #d84546;
+}
+
+footer {
+    background-color: #eee;
+    font-size: 0.9rem;
+    padding: 15px;
+}
+
+/* Pantallas medianas (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    main {
+        padding: 10px 5px;
+    }
+    
+    .container {
+        max-width: 90%;
+    }
+    
+    .image-container {
+        max-height: 35vh;
+    }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-width: 200px;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
 }
