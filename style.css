@@ -26,7 +26,7 @@ header, footer {
     padding: 10px;
     position: relative;
     z-index: 1000;
-    flex-shrink: 0; /* Evita que header y footer se compriman */
+    flex-shrink: 0;
 }
 
 header {
@@ -45,15 +45,15 @@ header {
 }
 
 main {
-    flex: 1 0 auto; /* Permite que crezca pero no se encoja */
+    flex: 1 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
     width: 100%;
-    min-height: 500px; /* Asegura una altura mínima */
-    overflow-y: auto; /* Permite scroll vertical si es necesario */
+    min-height: 500px;
+    overflow-y: auto;
 }
 
 .container {
@@ -67,7 +67,7 @@ main {
 
 .image-container {
     margin-bottom: 20px;
-    max-height: 40vh; /* Limita altura en viewport height */
+    max-height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,23 +79,57 @@ main {
     object-fit: contain;
 }
 
+/* Animación para el título */
 h1 {
     font-size: 2.2rem;
     color: var(--color-primary);
     margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.loading-text {
+    display: inline-block;
+    position: relative;
+    color: transparent;
+}
+
+.loading-text::before {
+    content: "¡Estamos trabajando!";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: var(--color-primary);
+    overflow: hidden;
+    white-space: nowrap;
+    animation: loading 8s infinite;
+}
+
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+    90% {
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
 p {
     font-size: 1.2rem;
     max-width: 600px;
-    margin: 0 auto 20px; /* Añadido margen inferior */
+    margin: 0 auto 20px;
     padding: 0 15px;
 }
 
 .btn {
     display: inline-block;
     margin-top: 20px;
-    margin-bottom: 20px; /* Asegura espacio debajo del botón */
+    margin-bottom: 20px;
     padding: 10px 20px;
     background-color: var(--color-accent);
     color: #fff;
